@@ -1,8 +1,20 @@
 <!-- Name Form Input -->
 <div class="form-group @if ($errors->has('name')) has-error @endif">
-    {!! Form::label('name', 'Name') !!}
+    {!! Form::label('username', 'User Name') !!}
+    {!! Form::text('username', null, ['class' => 'form-control', 'placeholder' => 'username']) !!}
+    @if ($errors->has('username')) <p class="help-block">{{ $errors->first('username') }}</p> @endif
+</div>
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+    {!! Form::label('name', 'First Name') !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
     @if ($errors->has('name')) <p class="help-block">{{ $errors->first('name') }}</p> @endif
+</div>
+
+<div class="form-group @if ($errors->has('name')) has-error @endif">
+    {!! Form::label('last_name', 'Last Name') !!}
+    {!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Last Name']) !!}
+    @if ($errors->has('last_name')) <p class="help-block">{{ $errors->first('last_name') }}</p> @endif
 </div>
 
 <!-- email Form Input -->

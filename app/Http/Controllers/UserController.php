@@ -46,8 +46,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'username' => 'bail|required|min:3|unique:users',
             'name' => 'bail|required|min:2',
-            'email' => 'required|email|unique:users',
+            'last_name' => 'bail|required|min:2',
+            'email' => 'email|unique:users',
             'password' => 'required|min:6',
             'roles' => 'required|min:1'
         ]);
@@ -105,8 +107,10 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'username' => 'bail|required|min:3|unique:users,username,' . $id,
             'name' => 'bail|required|min:2',
-            'email' => 'required|email|unique:users,email,' . $id,
+            'last_name' => 'bail|required|min:2',
+            'email' => 'email|unique:users,email,' . $id,
             'roles' => 'required|min:1'
         ]);
 

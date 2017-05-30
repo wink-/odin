@@ -18,7 +18,7 @@
         <table class="table table-bordered table-striped table-hover" id="data-table">
             <thead>
             <tr>
-                <th>Id</th>
+                <th>User</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
@@ -31,8 +31,8 @@
             <tbody>
             @foreach($result as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->username}}</td>
+                    <td>{{ $item->name . ' ' . $item->last_name}}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->roles->implode('name', ', ') }}</td>
                     <td>{{ $item->created_at->toFormattedDateString() }}</td>
