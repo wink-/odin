@@ -35,7 +35,6 @@ class CustomersRepository extends BaseRepository
         'cod',
         'tax_id',
         'note',
-        'id',
         'createdAt',
         'updatedAt'
     ];

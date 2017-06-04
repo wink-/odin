@@ -2,7 +2,7 @@
     @include('layouts.datatables_css')
 @endsection
 
-{!! $dataTable->table(['width' => '100%', 'class' => 'table table-hover table-condensed table-striped']) !!}
+{!! $dataTable->table(['width' => '100%']) !!}
 
 @section('scripts')
     @include('layouts.datatables_js')

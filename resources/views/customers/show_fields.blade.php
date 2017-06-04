@@ -1,3 +1,9 @@
+<!-- Id Field -->
+<div class="form-group">
+    {!! Form::label('id', 'Id:') !!}
+    <p>{!! $customers->id !!}</p>
+</div>
+
 <!-- Code Field -->
 <div class="form-group">
     {!! Form::label('code', 'Code:') !!}
@@ -126,7 +132,7 @@
 
 <!-- Cod Field -->
 <div class="form-group">
-    {!! Form::label('cod', 'Cod:') !!}
+    {!! Form::label('cod', 'COD:') !!}
     <p>{!! $customers->cod !!}</p>
 </div>
 
@@ -141,34 +147,3 @@
     {!! Form::label('note', 'Note:') !!}
     <p>{!! $customers->note !!}</p>
 </div>
-
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $customers->id !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $customers->created_at !!}</p>
-</div>
-
-<!-- Createdat Field -->
-<div class="form-group">
-    {!! Form::label('createdAt', 'Createdat:') !!}
-    <p>{!! $customers->createdAt !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $customers->updated_at !!}</p>
-</div>
-
-<!-- Updatedat Field -->
-<div class="form-group">
-    {!! Form::label('updatedAt', 'Updatedat:') !!}
-    <p>{!! $customers->updatedAt !!}</p>
-</div>
-

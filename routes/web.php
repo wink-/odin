@@ -31,3 +31,15 @@ Route::resource('customers', 'CustomersController');
 Route::resource('customers', 'CustomersController');
 
 Route::resource('customers', 'CustomersController');
+
+Route::resource('processes', 'ProcessesController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('customers', 'CustomersController');

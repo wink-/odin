@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CustomersDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
 use App\Repositories\CustomersRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class CustomersController extends Controller
@@ -24,16 +24,12 @@ class CustomersController extends Controller
     /**
      * Display a listing of the Customers.
      *
-     * @param Request $request
+     * @param CustomersDataTable $customersDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(CustomersDataTable $customersDataTable)
     {
-        $this->customersRepository->pushCriteria(new RequestCriteria($request));
-        $customers = $this->customersRepository->all();
-
-        return view('customers.index')
-            ->with('customers', $customers);
+        return $customersDataTable->render('customers.index');
     }
 
     /**

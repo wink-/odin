@@ -3,25 +3,20 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Customers
  * @package App\Models
- * @version May 31, 2017, 3:36 am UTC
+ * @version June 4, 2017, 9:53 pm UTC
  */
 class Customers extends Model
 {
-    use SoftDeletes;
 
     public $table = 'sft_customers';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
-
-    //protected $connection = 'wipsys';
-    protected $dates = ['deleted_at', 'created_at', 'updated_at'];
 
 
     public $fillable = [
@@ -49,6 +44,8 @@ class Customers extends Model
         'cod',
         'tax_id',
         'note',
+        'createdAt',
+        'updatedAt'
     ];
 
     /**
@@ -57,6 +54,7 @@ class Customers extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
         'code' => 'string',
         'name' => 'string',
         'physical_address' => 'string',
@@ -80,8 +78,7 @@ class Customers extends Model
         'email' => 'string',
         'cod' => 'boolean',
         'tax_id' => 'string',
-        'note' => 'string',
-        'id' => 'integer'
+        'note' => 'string'
     ];
 
     /**
