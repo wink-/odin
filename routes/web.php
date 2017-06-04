@@ -24,3 +24,10 @@ Route::group( ['middleware' => ['auth']], function() {
     Route::resource('roles', 'RoleController');
     Route::resource('posts', 'PostController');
 });
+
+
+Route::resource('customers', 'CustomersController');
+
+Route::resource('customers', 'CustomersController');
+
+Route::resource('customers', 'CustomersController');

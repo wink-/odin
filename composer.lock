@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "17b9a9bbc2065ccdcd8a528a3ecd3622",
+    "content-hash": "9ecd10c8ee0ebca90581d99a50962189",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2873,6 +2873,51 @@
             "time": "2015-05-11T14:41:42+00:00"
         },
         {
+            "name": "infyomlabs/adminlte-templates",
+            "version": "5.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
+                "reference": "c135ef4ea41dd6fc71b755d095b0879063aaec12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/c135ef4ea41dd6fc71b755d095b0879063aaec12",
+                "reference": "c135ef4ea41dd6fc71b755d095b0879063aaec12",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "InfyOm\\AdminLTETemplates\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mitul Golakiya",
+                    "email": "me@mitul.me"
+                }
+            ],
+            "description": "AdminLTE templates for InfyOm Laravel Generator",
+            "keywords": [
+                "AdminLTE",
+                "bootstrap",
+                "generator",
+                "infyom",
+                "laravel",
+                "templates"
+            ],
+            "time": "2017-05-20T10:43:21+00:00"
+        },
+        {
             "name": "infyomlabs/laravel-generator",
             "version": "5.4.x-dev",
             "source": {
@@ -4504,6 +4549,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "infyomlabs/laravel-generator": 20,
+        "infyomlabs/adminlte-templates": 20,
         "infyomlabs/swagger-generator": 20,
         "jlapp/swaggervel": 20
     },
