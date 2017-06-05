@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Customers;
+use App\Parts;
 use Form;
 use Yajra\Datatables\Services\DataTable;
 
-class CustomersDataTable extends DataTable
+class PartsDataTable extends DataTable
 {
 
     /**
@@ -16,7 +16,7 @@ class CustomersDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'customers.datatables_actions')
+            ->addColumn('action', 'parts.datatables_actions')
             ->make(true);
     }
 
@@ -27,9 +27,9 @@ class CustomersDataTable extends DataTable
      */
     public function query()
     {
-        $customers = Customers::query();
+        $parts = Parts::query();
 
-        return $this->applyScopes($customers);
+        return $this->applyScopes($parts);
     }
 
     /**
@@ -44,7 +44,6 @@ class CustomersDataTable extends DataTable
             ->addAction(['width' => '10%'])
             ->ajax('')
             ->parameters([
-                'pageLength' => 20,
                 'dom' => 'Bfrtip',
                 'scrollX' => false,
                 'buttons' => [
@@ -73,13 +72,13 @@ class CustomersDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'code' => ['name' => 'code', 'data' => 'code'],
-            'name' => ['name' => 'name', 'data' => 'name'],
-            'physical_address' => ['name' => 'physical_address', 'data' => 'physical_address'],
-            'city' => ['name' => 'city', 'data' => 'city'],
-            'state' => ['name' => 'state', 'data' => 'state'],
-            'zip' => ['name' => 'zip', 'data' => 'zip'],
-            'company_phone' => ['name' => 'company_phone', 'data' => 'company_phone'],
+            'number' => ['name' => 'number', 'data' => 'number'],
+            'description' => ['name' => 'description', 'data' => 'description'],
+            'customer_code' => ['name' => 'customer_code', 'data' => 'customer_code'],
+            'process_code' => ['name' => 'process_code', 'data' => 'process_code'],
+            'method_code' => ['name' => 'method_code', 'data' => 'method_code'],
+            'price' => ['name' => 'price', 'data' => 'price'],
+            'specification' => ['name' => 'specification', 'data' => 'specification']
 
         ];
     }
@@ -91,6 +90,6 @@ class CustomersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'customers';
+        return 'parts';
     }
 }

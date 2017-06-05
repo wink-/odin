@@ -3,7 +3,7 @@
 namespace App\DataTables;
 
 use Form;
-use App\Models\Processes;
+use App\Processes;
 use Yajra\Datatables\Services\DataTable;
 
 class ProcessesDataTable extends DataTable

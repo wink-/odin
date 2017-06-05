@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Eloquent as Model;
 
@@ -44,5 +44,8 @@ class Processes extends Model
         
     ];
 
-    
+    public function parts()
+    {
+         return  $this->belongsToMany(Parts::class, 'process_code', 'code');
+    }    
 }

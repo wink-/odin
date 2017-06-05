@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Customers;
+use App\Customers;
 use InfyOm\Generator\Common\BaseRepository;
 
 class CustomersRepository extends BaseRepository

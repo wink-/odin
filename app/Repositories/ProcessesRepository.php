@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Processes;
+use App\Processes;
 use InfyOm\Generator\Common\BaseRepository;
 
 class ProcessesRepository extends BaseRepository

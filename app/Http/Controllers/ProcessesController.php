@@ -11,7 +11,7 @@ use App\Repositories\ProcessesRepository;
 use App\Http\Controllers\AppBaseController;
 
 
-class ProcessesController extends Controller
+class ProcessesController extends AppBaseController
 {
     /** @var  ProcessesRepository */
     private $processesRepository;

@@ -32,15 +32,10 @@
             </div>
         </form>
 --}}
-<ul class="sidebar-menu tree" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li><a href="{!! route('customers.index') !!}"><i class="fa"></i> <span>Customers</span></a></li>
-        <li><a href="{!! route('processes.index') !!}"><i class="fa"></i> <span>Processes</span></a></li>
-
-</ul>
         <!-- Sidebar Menu -->
 
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
             @include('layouts.menu')
         </ul>
         <!-- /.sidebar-menu -->

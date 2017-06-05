@@ -11,7 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class CustomersController extends Controller
+class CustomersController extends AppBaseController
 {
     /** @var  CustomersRepository */
     private $customersRepository;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Eloquent as Model;
 
@@ -90,5 +90,9 @@ class Customers extends Model
         
     ];
 
+    public function parts()
+    {
+         return  $this->hasMany(Parts::class, 'customer_code', 'code');
+    }
     
 }

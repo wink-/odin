@@ -43,3 +43,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('customers', 'CustomersController');
+
+
+
+
+
+
+
+Route::resource('parts', 'PartsController');
