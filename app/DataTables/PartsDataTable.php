@@ -1,7 +1,7 @@
 <?php
 
 namespace App\DataTables;
-
+use Auth;
 use App\Parts;
 use Form;
 use Yajra\Datatables\Services\DataTable;
@@ -73,16 +73,28 @@ class PartsDataTable extends DataTable
      */
     private function getColumns()
     {
-        return [
-            'number' => ['name' => 'number', 'data' => 'number'],
-            'description' => ['name' => 'description', 'data' => 'description'],
-            'customer_code' => ['name' => 'customer_code', 'data' => 'customer_code'],
-            'process_code' => ['name' => 'process_code', 'data' => 'process_code'],
-            'method_code' => ['name' => 'method_code', 'data' => 'method_code'],
-            'price' => ['name' => 'price', 'data' => 'price'],
-            'specification' => ['name' => 'specification', 'data' => 'specification']
 
-        ];
+        if (Auth::user()->can('view_money'))
+        {
+            return [
+                'number' => ['name' => 'number', 'data' => 'number'],
+                'description' => ['name' => 'description', 'data' => 'description'],
+                'customer_code' => ['name' => 'customer_code', 'data' => 'customer_code'],
+                'process_code' => ['name' => 'process_code', 'data' => 'process_code'],
+                'method_code' => ['name' => 'method_code', 'data' => 'method_code'],
+                'price' => ['name' => 'price', 'data' => 'price'],
+                'specification' => ['name' => 'specification', 'data' => 'specification']
+            ];
+        } else {
+            return [
+                'number' => ['name' => 'number', 'data' => 'number'],
+                'description' => ['name' => 'description', 'data' => 'description'],
+                'customer_code' => ['name' => 'customer_code', 'data' => 'customer_code'],
+                'process_code' => ['name' => 'process_code', 'data' => 'process_code'],
+                'method_code' => ['name' => 'method_code', 'data' => 'method_code'],
+                'specification' => ['name' => 'specification', 'data' => 'specification']
+            ];
+        }      
     }
 
     /**

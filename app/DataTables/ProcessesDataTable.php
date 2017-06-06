@@ -2,6 +2,7 @@
 
 namespace App\DataTables;
 
+use Auth;
 use Form;
 use App\Processes;
 use Yajra\Datatables\Services\DataTable;
@@ -73,11 +74,19 @@ class ProcessesDataTable extends DataTable
      */
     private function getColumns()
     {
-        return [
-            'code' => ['name' => 'code', 'data' => 'code'],
-            'name' => ['name' => 'name', 'data' => 'name'],
-            'minimum_lot_charge' => ['name' => 'minimum_lot_charge', 'data' => 'minimum_lot_charge'],
-        ];
+        if (Auth::user()->can('view_money'))
+        {
+            return [
+                'code' => ['name' => 'code', 'data' => 'code'],
+                'name' => ['name' => 'name', 'data' => 'name'],
+                'minimum_lot_charge' => ['name' => 'minimum_lot_charge', 'data' => 'minimum_lot_charge'],
+            ];
+        } else {
+            return [
+                'code' => ['name' => 'code', 'data' => 'code'],
+                'name' => ['name' => 'name', 'data' => 'name'],
+            ];            
+        }
     }
 
     /**

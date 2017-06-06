@@ -9,9 +9,10 @@
     {!! Form::label('name', 'Name:') !!}
     <p>{!! $processes->name !!}</p>
 </div>
-
+@can('view_money')
 <!-- Minimum Lot Charge Field -->
 <div class="form-group">
     {!! Form::label('minimum_lot_charge', 'Minimum Lot Charge:') !!}
     <p>{!! $processes->minimum_lot_charge !!}</p>
 </div>
+@endcan
