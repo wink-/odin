@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@can('view_parts')
     <section class="content-header">
         <h1>
             Parts
@@ -16,4 +17,5 @@
             </div>
         </div>
     </div>
+@endcan
 @endsection

@@ -23,31 +23,7 @@ Route::group( ['middleware' => ['auth']], function() {
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
     Route::resource('posts', 'PostController');
+    Route::resource('customers', 'CustomersController');
+	Route::resource('parts', 'PartsController');
+	Route::resource('processes', 'ProcessesController');	
 });
-
-
-Route::resource('customers', 'CustomersController');
-
-Route::resource('customers', 'CustomersController');
-
-Route::resource('customers', 'CustomersController');
-
-Route::resource('processes', 'ProcessesController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Route::resource('customers', 'CustomersController');
-
-
-
-
-
-
-
-Route::resource('parts', 'PartsController');

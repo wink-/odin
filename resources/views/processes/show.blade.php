@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@can('view_processes')
     <section class="content-header">
         <h1>
             Processes
@@ -16,4 +17,5 @@
             </div>
         </div>
     </div>
+@endcan
 @endsection

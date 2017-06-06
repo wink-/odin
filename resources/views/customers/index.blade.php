@@ -4,7 +4,9 @@
     <section class="content-header">
         <h1 class="pull-left">Customers</h1>
         <h1 class="pull-right">
+        @can('add_customers')
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('customers.create') !!}">Add New</a>
+        @endcan
         </h1>
     </section>
     <div class="content">

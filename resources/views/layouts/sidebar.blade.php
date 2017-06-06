@@ -37,6 +37,15 @@
         <ul class="sidebar-menu tree" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             @include('layouts.menu')
+            @role('Admin')
+            <li class="header">ADMINISTRATION</li>
+            <li class="{{ Request::is('roles*') ? 'active' : '' }}">
+                <a href="{!! route('roles.index') !!}"></i><span>Roles</span></a>
+            </li>
+            <li class="{{ Request::is('users*') ? 'active' : '' }}">
+                <a href="{!! route('users.index') !!}"></i><span>Users</span></a>
+            </li>
+            @endrole
         </ul>
         <!-- /.sidebar-menu -->
     </section>

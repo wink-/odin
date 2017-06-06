@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@can('view_customers')
     <section class="content-header">
         <h1>
             Customers
@@ -16,4 +17,5 @@
             </div>
         </div>
     </div>
+@endcan    
 @endsection

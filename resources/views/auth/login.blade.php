@@ -46,7 +46,6 @@
 
             <div class="form-group has-feedback {{ $errors->has('username') ? ' has-error' : '' }}">
                 <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 @if ($errors->has('username'))
                     <span class="help-block">
                     <strong>{{ $errors->first('username') }}</strong>
