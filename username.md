@@ -18,6 +18,8 @@
 -[X] Fix login view to accept username instead of email
 
 # TODO
-Check over existings views for missing @can statements
+-[x]Check over existings views for missing @can statements
 
-Figure out about nesting route groups in middleware.
+-[]Figure out about nesting route groups in middleware.
+
+-[]Figure out date/time formatting in Workorder's datatable

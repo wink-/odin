@@ -27,3 +27,6 @@ Route::group( ['middleware' => ['auth']], function() {
 	Route::resource('parts', 'PartsController');
 	Route::resource('processes', 'ProcessesController');	
 });
+
+
+Route::resource('workorders', 'WorkordersController');

@@ -8,4 +8,7 @@
 
 <li class="{{ Request::is('processes*') ? 'active' : '' }}">
     <a href="{!! route('processes.index') !!}"></i><span>Processes</span></a>
+</li><li class="{{ Request::is('workorders*') ? 'active' : '' }}">
+    <a href="{!! route('workorders.index') !!}"><i class="fa fa-edit"></i><span>Workorders</span></a>
 </li>
+
