@@ -21,3 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('parts', 'Api\PartsAPIController');
 
 Route::resource('workorders', 'API\WorkordersAPIController');
+
+
+
+Route::resource('dmrs', 'API\DmrAPIController');
+
+Route::resource('dmrs', 'API\DmrAPIController');

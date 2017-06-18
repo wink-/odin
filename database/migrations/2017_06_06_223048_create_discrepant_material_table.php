@@ -9,11 +9,17 @@ class CreateDiscrepantMaterialTable extends Migration {
 	{
 		Schema::create('discrepant_material', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('workorder');
+			$table->integer('workorder_id');
+			$table->string('part_number');
+			$table->string('customer_code');
+			$table->string('process_code');
+			$table->integer('quantity_rejected');
 			$table->text('reason_for_rejection');
 			$table->date('corrective_action_due_date');
 			$table->date('rejection_date');
 			$table->enum('rejection_type', array('internal', 'external'));
+			$table->text('image_url');
+			$table->text('form_url');			
 			$table->timestamps();
 			$table->softDeletes();
 		});

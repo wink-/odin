@@ -52,7 +52,7 @@ class Workorders extends Model
         'invoiced',
         'note',
     ];
-    protected $dates = ['date_received', 'date_required', 'date_shipped'];
+    protected $dates = ['date_received','date_required', 'date_shipped'];
 
     /**
      * The attributes that should be casted to native types.
@@ -84,6 +84,7 @@ class Workorders extends Model
         'cod' => 'boolean',
         'invoiced' => 'boolean',
         'note' => 'string'
+        
     ];
 
     /**

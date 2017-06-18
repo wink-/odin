@@ -1,13 +1,12 @@
 <?php
 
 namespace App\DataTables;
-use Auth;
-use Carbon;
-use App\Workorders;
+
+use App\Dmr;
 use Form;
 use Yajra\Datatables\Services\DataTable;
 
-class WorkordersDataTable extends DataTable
+class DmrDataTable extends DataTable
 {
 
     /**
@@ -15,24 +14,19 @@ class WorkordersDataTable extends DataTable
      */
     public function ajax()
     {
-           return $this->datatables
+        return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'workorders.datatables_actions')
-            ->editColumn('date_received', function($workorders) {
-                if ($workorders->date_received) {
-                return $workorders->date_received->format('Y-m-d');
+            ->addColumn('action', 'dmrs.datatables_actions')
+            ->editColumn('corrective_action_due_date', function($dmr) {
+                if ($dmr->corrective_action_due_date) {
+                return $dmr->corrective_action_due_date->format('Y-m-d');
                 }
             })
-            ->editColumn('date_required', function($workorders) {
-                if ($workorders->date_required) {
-                return $workorders->date_required->format('Y-m-d');
+            ->editColumn('rejection_date', function($dmr) {
+                if ($dmr->rejection_date) {
+                return $dmr->rejection_date->format('Y-m-d');
                 }
             })
-            ->editColumn('date_shipped', function($workorders) {
-                if ($workorders->date_shipped) {
-                return $workorders->date_shipped->format('Y-m-d');
-                }
-            })            
             ->make(true);
     }
 
@@ -43,8 +37,9 @@ class WorkordersDataTable extends DataTable
      */
     public function query()
     {
-        $workorders = Workorders::query();
-        return $this->applyScopes($workorders);
+        $dmrs = Dmr::query();
+
+        return $this->applyScopes($dmrs);
     }
 
     /**
@@ -89,20 +84,14 @@ class WorkordersDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'number' => ['name' => 'number', 'data' => 'number'],
+            'workorder_id' => ['name' => 'workorder_id', 'data' => 'workorder_id'],
             'customer_code' => ['name' => 'customer_code', 'data' => 'customer_code'],
-            'part_number' => ['name' => 'part_number', 'data' => 'part_number'],
             'process_code' => ['name' => 'process_code', 'data' => 'process_code'],
-            'quantity' => ['name' => 'quantity', 'data' => 'quantity'],
-            'unit_code' => ['name' => 'unit_code', 'data' => 'unit_code'],
-            'price' => ['name' => 'price', 'data' => 'price'],
-            'date_received' => ['name' => 'date_received', 'data' => 'date_received'],
-            'date_required' => ['name' => 'date_required', 'data' => 'date_required'],
-            'customer_purchase_order' => ['name' => 'customer_purchase_order', 'data' => 'customer_purchase_order'],
-            'customer_packing_list' => ['name' => 'customer_packing_list', 'data' => 'customer_packing_list'],
-            'quantity_shipped' => ['name' => 'quantity_shipped', 'data' => 'quantity_shipped'],
-            'date_shipped' => ['name' => 'date_shipped', 'data' => 'date_shipped'],
-            'rework' => ['name' => 'rework', 'data' => 'rework'],
+            'quantity_rejected' => ['name' => 'quantity_rejected', 'data' => 'quantity_rejected'],
+            //'reason_for_rejection' => ['name' => 'reason_for_rejection', 'data' => 'reason_for_rejection'],
+            'rejection_date' => ['name' => 'rejection_date', 'data' => 'rejection_date'],
+            'rejection_type' => ['name' => 'rejection_type', 'data' => 'rejection_type'],
+            'corrective_action_due_date' => ['name' => 'corrective_action_due_date', 'data' => 'corrective_action_due_date']
         ];
     }
 
@@ -113,6 +102,6 @@ class WorkordersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'workorders';
+        return 'dmrs';
     }
 }

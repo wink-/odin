@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -25,8 +23,10 @@ Route::group( ['middleware' => ['auth']], function() {
     Route::resource('posts', 'PostController');
     Route::resource('customers', 'CustomersController');
 	Route::resource('parts', 'PartsController');
-	Route::resource('processes', 'ProcessesController');	
+	Route::resource('processes', 'ProcessesController');
+    Route::resource('workorders', 'WorkordersController');
+    Route::resource('dmrs', 'DmrController');
 });
 
 
-Route::resource('workorders', 'WorkordersController');
+

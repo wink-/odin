@@ -1,0 +1,1 @@
+# Run php artisan storage:link to create a symlink between the storage/app/public folder and the public/storage folder for file uploads.
