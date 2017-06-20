@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Flash;
 use Response;
 use App\Workorders;
+use App\WorkorderHistory as History;
 use App\Http\Requests;
 use App\DataTables\DmrDataTable;
 use App\Repositories\DmrRepository;
@@ -52,7 +53,19 @@ class DmrController extends AppBaseController
      */
     public function store(CreateDmrRequest $request)
     {
-        $wo = Workorders::findOrFail($request->workorder_id);
+        $wo = Workorders::find($request->workorder_id);
+        if (!$wo) {
+            $wo = History::find($request->workorder_id);
+        }
+
+        if (!$wo) {
+            
+            Flash::error('Workorder Not Found');
+
+            return redirect(route('dmrs.create'));
+
+        }
+
         
         $request->request->add(['customer_code' => $wo->customer_code]);
         $request->request->add(['process_code' => $wo->process_code]);

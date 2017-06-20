@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Workorders;
+use App\WorkorderHistory;
 use InfyOm\Generator\Common\BaseRepository;
 
-class WorkordersRepository extends BaseRepository
+class WorkorderHistoryRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'id',
+        'number',
         'customer_code',
         'part_id',
         'part_number',
@@ -42,8 +42,15 @@ class WorkordersRepository extends BaseRepository
         'cod',
         'invoiced',
         'note',
-//        'createdAt',
-//        'updatedAt'
+        'STEPNAME1',
+        'TMANHRS1',
+        'TOTHOURS1',
+        'STEPNAME2',
+        'TMANHRS2',
+        'TOTHOURS2',
+        'STEPNAME3',
+        'TMANHRS3',
+        'TOTHOURS3'
     ];
 
     /**
@@ -51,6 +58,6 @@ class WorkordersRepository extends BaseRepository
      **/
     public function model()
     {
-        return Workorders::class;
+        return WorkorderHistory::class;
     }
 }

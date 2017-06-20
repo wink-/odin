@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            DISCREPANT MATERIAL REPORT
+            Workorder History
         </h1>
    </section>
    <div class="content">
@@ -11,9 +11,9 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($dmr, ['route' => ['dmrs.update', $dmr->id], 'method' => 'patch', 'files' => true]) !!}
+                   {!! Form::model($workorderHistory, ['route' => ['workorderHistories.update', $workorderHistory->id], 'method' => 'patch']) !!}
 
-                        @include('dmrs.fields')
+                        @include('workorder_histories.fields')
 
                    {!! Form::close() !!}
                </div>

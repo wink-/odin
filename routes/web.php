@@ -26,7 +26,10 @@ Route::group( ['middleware' => ['auth']], function() {
 	Route::resource('processes', 'ProcessesController');
     Route::resource('workorders', 'WorkordersController');
     Route::resource('dmrs', 'DmrController');
+    Route::resource('workorderHistories', 'WorkorderHistoryController');
 });
+
+
 
 
 

@@ -2,8 +2,8 @@
 
 namespace App\DataTables;
 use Auth;
-use App\Parts;
 use Form;
+use App\Parts;
 use Yajra\Datatables\Services\DataTable;
 
 class PartsDataTable extends DataTable

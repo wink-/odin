@@ -19,19 +19,26 @@
 <!-- Rejection Date Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('rejection_date', 'Rejection Date:') !!}
+    @isset($dmr)
     {!! Form::date('rejection_date', $dmr->rejection_date, ['class' => 'form-control']) !!}
+    @endisset
+    @empty($dmr)
+    {!! Form::date('rejection_date', null, ['class' => 'form-control']) !!}
+    @endempty
+    
 </div>
 
-<!-- Rejection Type Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('rejection_type', 'Rejection Type:') !!}
-    {!! Form::select('rejection_type', ['internal' => 'Internal', 'external' => 'External'], 'internal'); !!}
-</div>
 
 <!-- Corrective Action Due Date Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('corrective_action_due_date', 'Corrective Action Due Date:') !!}
+    @isset($dmr)
     {!! Form::date('corrective_action_due_date', $dmr->corrective_action_due_date , ['class' => 'form-control']) !!}
+    @endisset
+    @empty($dmr)
+    {!! Form::date('corrective_action_due_date', null , ['class' => 'form-control']) !!}
+    @endempty
+
 </div>
 
 <!-- Image of Discrepant Material -->
@@ -44,6 +51,12 @@
 <div class="form-group col-sm-6">
     {!! Form::label('dmr_form', 'Customer Supplied DMR:') !!}
     {!! Form::file('dmr_form', ['class' => 'form-control', 'accept' => 'application/pdf']) !!}
+</div>
+
+<!-- Rejection Type Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('rejection_type', 'Rejection Type:') !!}
+    {!! Form::select('rejection_type', ['internal' => 'Internal', 'external' => 'External'], 'internal'); !!}
 </div>
 
 <!-- Submit Field -->

@@ -3,19 +3,18 @@
 @section('content')
     <section class="content-header">
         <h1>
-            DISCREPANT MATERIAL REPORT
+            Workorder History
         </h1>
     </section>
     <div class="content">
-        @include('flash::message')    
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'dmrs.store', 'files' => true]) !!}
+                    {!! Form::open(['route' => 'workorderHistories.store']) !!}
 
-                        @include('dmrs.fields')
+                        @include('workorder_histories.fields')
 
                     {!! Form::close() !!}
                 </div>
