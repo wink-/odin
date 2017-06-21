@@ -23,6 +23,9 @@
 <li class="{{ Request::is('dmrs*') ? 'active' : '' }}">
     <a href="{!! route('dmrs.index') !!}"></i><span>Discrepant Material</span></a>
 </li>
+<li class="{{ Request::is('correctiveActions*') ? 'active' : '' }}">
+    <a href="{!! route('correctiveActions.index') !!}"><span>Corrective Actions</span></a>
+</li>
 
 @role('Admin')
 <li class="header">ADMINISTRATION</li>
@@ -33,4 +36,6 @@
     <a href="{!! route('users.index') !!}"></i><span>Users</span></a>
 </li>
 @endrole
+
+
 

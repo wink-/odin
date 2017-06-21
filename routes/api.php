@@ -23,3 +23,6 @@ Route::resource('parts', 'Api\PartsAPIController');
 Route::resource('workorders', 'API\WorkordersAPIController');
 Route::resource('workorder_histories', 'API\WorkorderHistoryAPIController');
 
+
+
+Route::resource('corrective_actions', 'API\CorrectiveActionAPIController');

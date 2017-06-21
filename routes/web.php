@@ -27,7 +27,10 @@ Route::group( ['middleware' => ['auth']], function() {
     Route::resource('workorders', 'WorkordersController');
     Route::resource('dmrs', 'DmrController');
     Route::resource('workorderHistories', 'WorkorderHistoryController');
+    Route::resource('correctiveActions', 'CorrectiveActionController');
 });
+
+
 
 
 
