@@ -67,8 +67,31 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-        ],        
+        ],
 
+        'pacsys' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_PACSYS_HOST', 'localhost'),
+            'database'  => env('DB_PACSYS_DATABASE', 'PacSys'),
+            'username'  => env('DB_PACSYS_USERNAME', 'root'),
+            'password'  => env('DB_PACSYS_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
+        'process_data' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_LOGGER_HOST', 'localhost'),
+            'database'  => env('DB_LOGGER_DATABASE', 'process_data'),
+            'username'  => env('DB_LOGGER_USERNAME', 'root'),
+            'password'  => env('DB_LOGGER_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],        
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

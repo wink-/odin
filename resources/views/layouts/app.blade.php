@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Odin</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    @yield('meta')
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -14,8 +15,11 @@
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
+    <!-- Styles -->
+    @yield('before-styles-end')
     @yield('css')
+    @yield('after-styles-end')
+
 </head>
 
 <body class="skin-blue sidebar-mini">
@@ -89,7 +93,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © {{ date("Y") }} <a href="#">Surface Finish Technologies, Inc.</a>.</strong> All rights reserved.
+            <strong>Copyright © {{ date("Y") }} <a href="#">Surface Finish Technologies, Inc</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -148,7 +152,8 @@
     <script>$('div.alert').not('.alert-important').delay(3000).fadeOut(350);</script>
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
-
+    @yield('before-scripts-end')
     @yield('scripts')
+    @yield('after-scripts-end')
 </body>
 </html>
