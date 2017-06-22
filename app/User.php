@@ -10,6 +10,28 @@ class User extends Authenticatable
 {
     use Notifiable, HasRoles;
 
+   /**
+     * The database connection used by the model.
+     *
+     * @var string
+     */
+    //protected $connection = "wipsys";
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'pluto_users';
+
+   /**
+     * The primary key used by the model.
+     *
+     * @var string
+     */
+    //protected $primaryKey = 'id';
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +49,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 
     public function posts()
     {

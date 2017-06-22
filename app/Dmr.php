@@ -12,7 +12,7 @@ use Eloquent as Model;
 class Dmr extends Model
 {
 
-    public $table = 'discrepant_material';
+    public $table = 'pluto_discrepant_material';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

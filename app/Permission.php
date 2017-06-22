@@ -4,6 +4,27 @@ namespace App;
 
 class Permission extends \Spatie\Permission\Models\Permission
 {
+   /**
+     * The database connection used by the model.
+     *
+     * @var string
+     */
+    //protected $connection = "wipsys";
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'pluto_permissions';
+
+   /**
+     * The primary key used by the model.
+     *
+     * @var string
+     */
+    //protected $primaryKey = 'id';
+
 
     public static function defaultPermissions()
     {
