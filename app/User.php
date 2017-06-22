@@ -22,7 +22,7 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $table = 'pluto_users';
+    protected $table = 'users';
 
    /**
      * The primary key used by the model.
