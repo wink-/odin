@@ -44,6 +44,7 @@ class WorkordersDataTable extends DataTable
     public function query()
     {
         $workorders = Workorders::query();
+
         return $this->applyScopes($workorders);
     }
 

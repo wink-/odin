@@ -26,6 +26,18 @@
 <li class="{{ Request::is('correctiveActions*') ? 'active' : '' }}">
     <a href="{!! route('correctiveActions.index') !!}"><span>Corrective Actions</span></a>
 </li>
+<li class="header">MONITORING</li>
+<li class="treeview">
+  <a href="#">
+    <span>Reports</span>
+    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+  </a>
+  <ul class="treeview-menu" style="display: none;">
+    <li><a href="{!! route('solutions') !!}"><i class="fa fa-circle-o"></i> Solutions</a></li>
+    <li><a href="{!! route('ovens') !!}"><i class="fa fa-circle-o"></i> Ovens</a></li>
+    <li><a href="{!! route('amps') !!}"><i class="fa fa-circle-o"></i> Amps</a></li>
+  </ul>
+</li>
 
 @role('Admin')
 <li class="header">ADMINISTRATION</li>
@@ -39,17 +51,3 @@
 
 
 
-<li class="treeview">
-          <a href="#">
-          <span>Reports</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-          </a>
-          <ul class="treeview-menu" style="display: none;">
-            <li><a href="{!! route('solutions') !!}"><i class="fa fa-circle-o"></i> Solutions</a></li>
-            <li><a href="{!! route('ovens') !!}"><i class="fa fa-circle-o"></i> Ovens</a></li>
-			<li><a href="{!! route('amps') !!}"><i class="fa fa-circle-o"></i> Amps</a></li>
-
-          </ul>
-        </li>
